@@ -1,7 +1,7 @@
 COMO RODAR O PROJETO BAIXADO
 
 ## Requisitos
-* PHP 8.1 ou Superior
+* PHP 8.2 ou Superior
 * Composer
 * GIT
 
