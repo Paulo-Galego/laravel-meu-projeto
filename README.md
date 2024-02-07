@@ -22,7 +22,7 @@ php artisan key:generate
 
 ## Sequencia para criar o projeto
 
-Criar o projeto com Laravel
+Criar o projeto com Laravel 
 ```
 composer create laravel/laravel laravel-meu-projeto
 ```
