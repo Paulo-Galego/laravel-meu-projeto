@@ -1,7 +1,7 @@
 COMO RODAR O PROJETO BAIXADO
 
 ##Requisitos
-* PHP 8.1 ou Superior
+* PHP 8.2 ou Superior
 * Composer
 * GIT
 
@@ -11,9 +11,9 @@ Instalar as dependências
 composer install
 ```
 
-```
+
 Duplicar o arquivo ".env.example" e renomear para ".env"
-```
+
 
 Gerar a chave
 ```
@@ -64,7 +64,7 @@ git clone --branch <nome-da-branch> <nome-do-repostorio-url>
 ```
 
 ```
-git clone --branch git@github.com:Paulo-Galego/laravel-meu-projeto.git
+git clone --branch dev-master git@github.com:Paulo-Galego/laravel-meu-projeto.git
 ```
 
 Verificar a branch
