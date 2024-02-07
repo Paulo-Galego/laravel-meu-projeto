@@ -20,7 +20,7 @@ Gerar a chave
 php artisan key:generate
 ```
 
-##Sequencia paracriar o projeto
+##Sequencia para criar o projeto
 
 Criar o projeto com Laravel
 ```
@@ -29,7 +29,7 @@ composer create laravel/laravel laravel-meu-projeto
 
 Acessar o diretório onde está o projeto
 ```
-cd laravel*meu-projeto
+cd laravel meu-projeto
 ```
 
 Iniciaar o projeto criado com Laravel
