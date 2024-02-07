@@ -42,6 +42,21 @@ Acessar o conteúdo padrão do Laravel
 http://127.0.0.1:8000/
 ```
 
+## Criar a migration (Comandos para criar banco de dados e tabelas)
+
+```
+php artisan make:migration create_[name]_table
+```
+
+```
+php artisan make:migration create_courses_table
+```
+
+Executar as migration 
+```
+php artisan migrate
+```
+
 ## Enviar para o GitHub
 Iniciar novo packet com GIT na máquina
 ```
