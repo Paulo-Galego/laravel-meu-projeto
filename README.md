@@ -57,6 +57,22 @@ Executar as migration
 php artisan migrate
 ```
 
+## Criar controller
+
+```
+php artisan make:controller NomeDaController
+```
+```
+php artisan make:controller  CourseController
+```
+
+## Criar a View
+
+php artisan make:view nomePasta\nomeView
+```
+php artisan make:view courses/index
+```
+
 ## Enviar para o GitHub
 Iniciar novo packet com GIT na máquina
 ```

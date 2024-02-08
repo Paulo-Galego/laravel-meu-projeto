@@ -9,6 +9,7 @@
     </head>
     <body>
 <h1>Meu projeto com Laravel</h1>
+<a href="{{ route('course.index')}}">Lista os Cursos</a>
 
     </body>
 </html>
