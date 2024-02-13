@@ -87,6 +87,15 @@ Acessar:
 https://github.com/lucascudo/laravel-pt-BR-localization
 ```
 
+## Criando Seed
+```
+php artisan make:seeder CourseSeeder
+```
+
+```
+php artisan db:seed
+```
+
 
 ## Enviar para o GitHub
 Iniciar novo packet com GIT na máquina
