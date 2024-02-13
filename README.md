@@ -73,6 +73,21 @@ php artisan make:view nomePasta\nomeView
 php artisan make:view courses/index
 ```
 
+## Criar Models
+
+php artisan make:model NomeDaModel
+```
+php artisan make: model Course
+```
+
+## Traduzi paginação para português
+
+Acessar:
+```
+https://github.com/lucascudo/laravel-pt-BR-localization
+```
+
+
 ## Enviar para o GitHub
 Iniciar novo packet com GIT na máquina
 ```

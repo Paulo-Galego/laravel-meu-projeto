@@ -10,7 +10,6 @@
     <h2>Editar Curso</h2>
     <a href="{{ route('course.index')}}">Listar</a><br>
     <a href="{{ route('course.show')}}">Visualizar</a><br>
-    <a href="{{ route('course.create')}}">Cadastrar</a><br>
     {{-- <a href="{{ route('course.destroy')}}">Apagar</a><br> --}}
 </body>
 </html>
