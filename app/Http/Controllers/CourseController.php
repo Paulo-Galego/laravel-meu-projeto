@@ -22,10 +22,10 @@ class CourseController extends Controller
     }
 
     //Detalhes do curso
-    public  function show(Request $request){
+    public  function show(Request $request, Course $course){
 
     //Recuperar as informações do curso
-    $course =  Course::where('id', $request->courseId)->first();
+    //$course =  Course::where('id', $request->course)->first();
 
         return view('courses.show', ['course' => $course]);
     }
@@ -45,12 +45,19 @@ class CourseController extends Controller
     }
 
     //Carregar formulario pata editar curso
-    public  function edit(){
-        return view('courses.edit');
+    public  function edit(Request $request, Course $course){
+
+        //$course= Course::where('id', $request->course)->first();
+        //dd($course);
+        return view('courses.edit', ['course' => $course]);
     }
     //Editar no banco de dados o curso
-    public  function update(){
-       dd("Editar no banco de dados o curso");
+    public  function update(Request $request, Course $course){
+
+       $course->update(['name' => $request->name]);
+       //Redirecionar o usuário
+       return redirect()->route('course.show', ['course' => $request->course])->with('sucess','Curso editado com sucesso');
+       
     }
 
     //Excluir no banco de dados o curso

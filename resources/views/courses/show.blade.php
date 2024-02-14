@@ -8,7 +8,7 @@
 </head>
 <body>
     <a href="{{ route('course.index')}}">Listar</a><br>
-    <a href="{{ route('course.edit')}}">Editar</a><br>
+    <a href="{{ route('course.edit',['course' => $course->id])}}">Editar</a><br>
    {{-- <a href="{{ route('course.destroy')}}">Apagar</a><br> --}}
 
     <h2>Detalhes do Curso</h2>
