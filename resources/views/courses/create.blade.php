@@ -8,7 +8,7 @@
 </head>
 <body>
     <br>
-    <a href="{{ route('course.index')}}">Listar</a><br>
+    <a href="{{ route('course.index')}}"><button type="button">Listar</button></a><br>
 
     <h2>Cadastrar Curso</h2>
    

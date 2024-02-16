@@ -7,9 +7,18 @@
     <title>Cursos</title>
 </head>
 <body>
-    <a href="{{ route('course.index')}}">Listar</a><br>
-     <a href="{{ route('course.show',['course'=>$course->id])}}">Visualizar</a><br>
-   {{-- <a href="{{ route('course.destroy')}}">Apagar</a><br> --}}
+    <a href="{{ route('course.index')}}"><button type="button">Listar</button></a><br>
+     <a href="{{ route('course.show',['course'=>$course->id])}}"><button type="button">Visualizar</button></a><br>
+   
+     <form action="{{route('course.destroy',['course' => $course->id])}}" method="post">
+        @csrf
+        @method('delete')
+        <button type="submit" onclick="return confirm('Tem certeza que deseja excluir esse registro?')">Apagar</button>
+    </form>
+
+
+
+
     <h2>Editar Curso</h2>
 
 <form action="{{route('course.update',['course' => $course->id])}}" method="post">

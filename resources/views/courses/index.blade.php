@@ -9,10 +9,18 @@
 <body>
     <br>
    
-    <a href="{{ route('course.create')}}">Cadastrar</a><br>
+    <a href="{{ route('course.create')}}"><button type="button">Cadastrar</button></a><br>
     
     {{-- <a href="{{ route('course.destroy')}}">Apagar</a><br> --}}
     <h2>Lista os Cursos</h2>
+
+
+    @if(session('sucess'))
+    <p style="color: #082">
+        {{session('sucess')}}
+    </p>
+
+@endif
     
 
     @forelse($courses as $course)
@@ -20,8 +28,16 @@
         Name: {{$course->name}} <br>
         Cadastrado: {{\Carbon\Carbon::parse($course->created_at)->tz('America/Sao_Paulo')->format('d/m/Y H:i:s')}} <br>
         Editado: {{\Carbon\Carbon::parse($course->updated_at)->tz('America/Sao_Paulo')->format('d/m/Y H:i:s')}} <br>
-        <a href="{{route('course.show',['course'=> $course->id])}}">Visualizar</a><br>
-        <a href="{{route('course.edit',['course'=> $course->id])}}">Editar</a><br>
+        <a href="{{route('course.show',['course'=> $course->id])}}"><button type="button">Visualizar</button></a><br>
+        <a href="{{route('course.edit',['course'=> $course->id])}}"><button type="button">Editar</button></a><br>
+
+        <form action="{{route('course.destroy',['course' => $course->id])}}" method="post">
+            @csrf
+            @method('delete')
+            <button type="submit" onclick="return confirm('Tem certeza que deseja excluir esse registro?')">Apagar</button>
+        </form>
+
+
         <hr>
     @empty
         <p style="color: #f00">Nenhum curso encontrado</p>
