@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClasseController;
 use App\Http\Controllers\CourseController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,3 +27,7 @@ Route::post('/store-course',[CourseController::class, 'store'])->name('course.st
 Route::get('/edit-course/{course}',[CourseController::class, 'edit'])->name('course.edit');;
 Route::put('/update-course/{course}',[CourseController::class, 'update'])->name('course.update');;
 Route::delete('/destroy-course/{course}',[CourseController::class, 'destroy'])->name('course.destroy');;
+
+//Aulas
+Route::get('/index-classe/{course}',[ClasseController::class, 'index'])->name('classe.index');
+Route::get('/show-classe/{classe}', [ClasseController::class,'show'])->name('classe.show');

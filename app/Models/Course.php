@@ -13,5 +13,13 @@ class Course extends Model
     protected $tabela="courses";
 
     //Indicar coluna que serão utilizadas
-    protected $fillable =['name'];
+    protected $fillable =['name', 'price'];
+
+
+    //Criar um relacionamento entre um e muitos
+    public function classe()
+    {
+        return $this->hasMany(Classe::class);
+    }
+
 }

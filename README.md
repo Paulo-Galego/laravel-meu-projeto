@@ -57,6 +57,35 @@ Executar as migration
 php artisan migrate
 ```
 
+## Mais Comandos Migrate (Criação de colunas)
+
+Comando para criar uma migrate, no caso inserir uma coluna nova no banco de dados:
+```
+php artisan make:migration alter_courses_add_price_table 
+```
+No arquivo migrations que foi criado, ir no método up e inserir o seguinte comando:
+public function up(): void
+    {
+        Schema::table('courses', function(Blueprint $table){
+            $table->float('price')->after('name')->default(0);
+        });
+    }
+
+
+Após alterar o up, execurtar
+```
+php artisan migrate 
+```
+
+
+Rollback (reverter a migração mais recente)
+``` 
+hp artisan migrate:rollback 
+``` 
+
+
+
+
 ## Criar controller
 
 ```

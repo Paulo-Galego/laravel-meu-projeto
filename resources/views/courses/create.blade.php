@@ -18,7 +18,14 @@
     @csrf   {{--utilizado para segurança no envio do formulario --}}
     @method('POST')
     <label for="Nome">Nome</label>
-    <input type="text" name="name" placeholder="Nome do curso" value="{{ old('name')}}" required><br><br>
+    <input type="text" name="name" id="price" placeholder="Nome do curso" value="{{ old('name')}}" required><br><br>
+    
+    <label for="Preço">Preço</label>
+    <input type="text" name="price" id="price" placeholder="Usar '.' separar real do centavo" value="{{ old('price')}}" required><br><br>
+    
+
+
+
     <button type="submit">Cadastrar</button>
 
 </form>

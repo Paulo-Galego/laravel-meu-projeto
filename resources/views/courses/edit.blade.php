@@ -27,6 +27,12 @@
 
     <label>Nome:</label>
     <input type="text" name="name" id="name" placeholder="Nome do curso" value="{{old('name', $course->name)}}" required><br><br>
+    
+    <label>Preço:</label>
+    <input type="text" name="price" id="price" placeholder="Usar o '.' para separar o real" value="{{old('price', $course->price)}}" required><br><br>
+
+
+    
     <button type="submit">Salvar</button>
 </form>
 
