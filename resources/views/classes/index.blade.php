@@ -8,7 +8,10 @@
 </head>
 <body>
     <br>
- <a href="{{route('course.index')}}" class=""><button type="button">Cursos</button></a>
+ <a href="{{route('course.index')}}" class=""><button type="button">Cursos</button></a><br><br>
+
+ <a href="{{route('classe.create',['course' => $course->id])}}" class=""><button type="button">Cadastar</button></a><br><br>
+
 
     <h2>Lista os Aulas</h2>
 
@@ -32,6 +35,13 @@
       <br>
       <br>
         <a href="{{route('classe.show',['classe'=> $classe->id])}}"><button type="button">Visualizar</button></a><br><br>
+        <a href="{{route('classe.edit',['classe'=> $classe->id])}}"><button type="button">Editar</button></a><br><br>
+
+        <form action="{{route('classe.destroy',['classe' => $classe->id])}}" method="post">
+            @csrf
+            @method('delete')
+            <button type="submit" onclick="return confirm('Tem certeza que deseja apagar esse registro?') ">Apagar</button>
+        </form>
 
         <hr>
     @empty
