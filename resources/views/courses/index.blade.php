@@ -19,8 +19,13 @@
     <p style="color: #082">
         {{session('sucess')}}
     </p>
+    @endif
 
-@endif
+    @if(session('error'))
+    <p style="color: #f00">
+        {{session('error')}}
+    </p>
+    @endif
     
 
     @forelse($courses as $course)

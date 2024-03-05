@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Classe;
 use App\Models\Course;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ClasseController extends Controller
 {
@@ -33,18 +35,30 @@ class ClasseController extends Controller
     //Cadastrar no banco de dados a nova aula
     public function store(Request $request)
     {
-       
-        //Recuperar a última ordem do curso enviado no request
-        $lastOrderClasse = Classe::where('course_id', $request->course_id)->OrderByDesc('order_classe')->first();
+        DB::beginTransaction();
+        try
+        {
+            //Recuperar a última ordem do curso enviado no request
+            $lastOrderClasse = Classe::where('course_id', $request->course_id)->OrderByDesc('order_classe')->first();
 
-        $classe = Classe::create([
-            'name'=>$request->name,
-            'description'=>$request->description,
-            'order_classe'=>$lastOrderClasse->order_classe + 1,
-            'course_id'=>$request->course_id
-        ]);   
-        
-        return redirect()->route('classe.index',['course'=>$request->course_id])->with('sucess','Aula cadastrada com sucesso!');
+            $classe = Classe::create([
+                'name'=>$request->name,
+                'description'=>$request->description,
+                'order_classe'=>$lastOrderClasse->order_classe + 1,
+                'course_id'=>$request->course_id
+            ]);   
+
+          
+
+            DB::commit();
+            return redirect()->route('classe.index',['course'=>$request->course_id])->with('sucess','Aula cadastrada com sucesso!');
+        }
+        catch(Exception $ex)
+        {
+            DB::rollBack();
+            return redirect()->back()->with('error','Aula não cadastrada!');
+        }
+
     }
 
     public function edit(Classe $classe){

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use Exception;
 use Illuminate\Http\Request;
 use PHPUnit\Framework\Constraint\Count;
 
@@ -65,11 +66,15 @@ class CourseController extends Controller
 
     //Excluir no banco de dados o curso
     public  function destroy(Course $course){
-        
-        //Exclui registro no banco de dados
-        $course->delete();
+        try {
+            //Exclui registro no banco de dados
+            $course->delete();
+            return redirect()->route('course.index')->with('success','Curso excluído com sucesso');
+        } catch (Exception $ex) {
+            return redirect()->route('course.index')->with('error','Curso não excluído!');
+        }
 
-        return redirect()->route('course.index')->with('success','Curso excluído com sucesso');
+        
      }
 
 

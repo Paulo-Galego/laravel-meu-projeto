@@ -8,9 +8,15 @@
 </head>
 <body>
     <br>
-    <a href="{{ route('course.index')}}"><button type="button">Listar</button></a><br>
+    <a href="{{ route('classe.index',['course'=>$course->id])}}"><button type="button">Listar</button></a><br>
 
     <h2>Cadastrar Aula</h2>
+
+    @if(session('error'))
+    <p style="color: #f00">
+        {{session('error')}}
+    </p>
+    @endif
 
 
    

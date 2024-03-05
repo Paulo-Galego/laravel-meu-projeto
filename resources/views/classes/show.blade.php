@@ -8,7 +8,14 @@
 </head>
 <body>
     <a href="{{ route('classe.index', ['course' => $classe->course_id])}}"><button type="button">Listar</button></a><br><br>
-    <a href="{{ route('classe.edit',['classe' => $classe->id])}}"><button type="button">Editar</button></a><br>
+    <a href="{{ route('classe.edit',['classe' => $classe->id])}}"><button type="button">Editar</button></a><br><br>
+
+
+    <form action="{{route('classe.destroy',['classe' => $classe->id])}}" method="post">
+        @csrf
+        @method('delete')
+        <button type="submit" onclick="return confirm('Tem certeza que deseja apagar esse registro?') ">Apagar</button>
+    </form>
    
 
     <h2>Detalhes da Aula</h2>
